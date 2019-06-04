@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sandbox-version-eight';
+
+  constructor(private store: Store<any>) { }
+
+  ping() {
+    this.store.dispatch({ type: 'PING' });
+  }
 }
